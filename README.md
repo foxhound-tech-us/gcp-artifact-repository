@@ -50,19 +50,18 @@ terraform destroy
 ## Module Documentation
 
 <!-- BEGIN_TF_DOCS -->
-
 ### Requirements
 
-| Name                                                                     | Version |
-| ------------------------------------------------------------------------ | ------- |
-| <a name="requirement_terraform"></a> [terraform](#requirement_terraform) | ~>1.9   |
-| <a name="requirement_google"></a> [google](#requirement_google)          | 6.1.0   |
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~>1.9 |
+| <a name="requirement_google"></a> [google](#requirement\_google) | 6.1.0 |
 
 ### Providers
 
-| Name                                                      | Version |
-| --------------------------------------------------------- | ------- |
-| <a name="provider_google"></a> [google](#provider_google) | 6.1.0   |
+| Name | Version |
+|------|---------|
+| <a name="provider_google"></a> [google](#provider\_google) | 6.1.0 |
 
 ### Modules
 
@@ -70,38 +69,37 @@ No modules.
 
 ### Resources
 
-| Name                                                                                                                                                         | Type        |
-| ------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------- |
-| [google_artifact_registry_repository.repository](https://registry.terraform.io/providers/hashicorp/google/6.1.0/docs/resources/artifact_registry_repository) | resource    |
-| [google_kms_crypto_key.my_crypto_key](https://registry.terraform.io/providers/hashicorp/google/6.1.0/docs/data-sources/kms_crypto_key)                       | data source |
-| [google_kms_key_ring.my_key_ring](https://registry.terraform.io/providers/hashicorp/google/6.1.0/docs/data-sources/kms_key_ring)                             | data source |
+| Name | Type |
+|------|------|
+| [google_artifact_registry_repository.repository](https://registry.terraform.io/providers/hashicorp/google/6.1.0/docs/resources/artifact_registry_repository) | resource |
+| [google_kms_crypto_key.my_crypto_key](https://registry.terraform.io/providers/hashicorp/google/6.1.0/docs/data-sources/kms_crypto_key) | data source |
+| [google_kms_key_ring.my_key_ring](https://registry.terraform.io/providers/hashicorp/google/6.1.0/docs/data-sources/kms_key_ring) | data source |
 
 ### Inputs
 
-| Name                                                                        | Description                                                                                                                                                                                                                                     | Type          | Default                 | Required |
-| --------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------- | ----------------------- | :------: |
-| <a name="input_create_timeout"></a> [create_timeout](#input_create_timeout) | (Optional) Creation Timeout of Resource                                                                                                                                                                                                         | `number`      | `20`                    |    no    |
-| <a name="input_crypto_key"></a> [crypto_key](#input_crypto_key)             | (Required) The name of the crypto key to use.                                                                                                                                                                                                   | `string`      | n/a                     |   yes    |
-| <a name="input_delete_timeout"></a> [delete_timeout](#input_delete_timeout) | (Optional) Delete Timeout of Resource                                                                                                                                                                                                           | `number`      | `20`                    |    no    |
-| <a name="input_description"></a> [description](#input_description)          | (Optional) The user-provided description of the repository.                                                                                                                                                                                     | `string`      | `""`                    |    no    |
-| <a name="input_docker_config"></a> [docker_config](#input_docker_config)    | (Optional) This contains repository level configuration for the repositories of format type of Docker. Allows setting immutable_tags.                                                                                                           | `map(string)` | `{}`                    |    no    |
-| <a name="input_format"></a> [format](#input_format)                         | (Required) The format of packages that are stored in the repository. Currently, the possible allowed value for the Format of the Artifact Registry Repository is: DOCKER.                                                                       | `string`      | `"DOCKER"`              |    no    |
-| <a name="input_labels"></a> [labels](#input_labels)                         | (Required) A set of additional key/value label pairs to assign to the bucket. This is usually inherited from the Mandatory Labels Module via the format: "module.mandatory_labels.module".                                                      | `map(string)` | `{}`                    |    no    |
-| <a name="input_location"></a> [location](#input_location)                   | (Required) The name of the location this repository is located in.                                                                                                                                                                              | `string`      | n/a                     |   yes    |
-| <a name="input_mode"></a> [mode](#input_mode)                               | (Optional) The mode configures the repository to serve artifacts from different sources. Default value is STANDARD_REPOSITORY. Currently, the possible allowed values for the Mode of the Artifact Registry Repository is: STANDARD_REPOSITORY. | `string`      | `"STANDARD_REPOSITORY"` |    no    |
-| <a name="input_project_id"></a> [project_id](#input_project_id)             | (Optional) The ID of the project in which the resource belongs. If it is not provided, the project ID listed in the provider is used.                                                                                                           | `string`      | `""`                    |    no    |
-| <a name="input_repository_id"></a> [repository_id](#input_repository_id)    | (Required) The last part of the repository name                                                                                                                                                                                                 | `string`      | n/a                     |   yes    |
-| <a name="input_update_timeout"></a> [update_timeout](#input_update_timeout) | (Optional) Update Timeout of Resource                                                                                                                                                                                                           | `number`      | `20`                    |    no    |
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_create_timeout"></a> [create\_timeout](#input\_create\_timeout) | (Optional) Creation Timeout of Resource | `number` | `20` | no |
+| <a name="input_crypto_key"></a> [crypto\_key](#input\_crypto\_key) | (Required) The name of the crypto key to use. | `string` | n/a | yes |
+| <a name="input_delete_timeout"></a> [delete\_timeout](#input\_delete\_timeout) | (Optional) Delete Timeout of Resource | `number` | `20` | no |
+| <a name="input_description"></a> [description](#input\_description) | (Optional) The user-provided description of the repository. | `string` | `""` | no |
+| <a name="input_docker_config"></a> [docker\_config](#input\_docker\_config) | (Optional) This contains repository level configuration for the repositories of format type of Docker. Allows setting immutable\_tags. | `map(string)` | `{}` | no |
+| <a name="input_format"></a> [format](#input\_format) | (Required) The format of packages that are stored in the repository. Currently, the possible allowed value for the Format of the Artifact Registry Repository is: DOCKER. | `string` | `"DOCKER"` | no |
+| <a name="input_labels"></a> [labels](#input\_labels) | (Required) A set of additional key/value label pairs to assign to the bucket. This is usually inherited from the Mandatory Labels Module via the format: "module.mandatory\_labels.module". | `map(string)` | `{}` | no |
+| <a name="input_location"></a> [location](#input\_location) | (Required) The name of the location this repository is located in. | `string` | n/a | yes |
+| <a name="input_mode"></a> [mode](#input\_mode) | (Optional) The mode configures the repository to serve artifacts from different sources. Default value is STANDARD\_REPOSITORY. Currently, the possible allowed values for the Mode of the Artifact Registry Repository is: STANDARD\_REPOSITORY. | `string` | `"STANDARD_REPOSITORY"` | no |
+| <a name="input_project_id"></a> [project\_id](#input\_project\_id) | (Optional) The ID of the project in which the resource belongs. If it is not provided, the project ID listed in the provider is used. | `string` | `""` | no |
+| <a name="input_repository_id"></a> [repository\_id](#input\_repository\_id) | (Required) The last part of the repository name | `string` | n/a | yes |
+| <a name="input_update_timeout"></a> [update\_timeout](#input\_update\_timeout) | (Optional) Update Timeout of Resource | `number` | `20` | no |
 
 ### Outputs
 
-| Name                                                                 | Description                                                                                                             |
-| -------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| <a name="output_create_time"></a> [create_time](#output_create_time) | The time when the repository was created.                                                                               |
-| <a name="output_id"></a> [id](#output_id)                            | An identifier for the resource with format projects/{{project}}/locations/{{location}}/repositories/{{repository\_id}}. |
-| <a name="output_name"></a> [name](#output_name)                      | The name of the repository, for example: "repo1".                                                                       |
-| <a name="output_update_time"></a> [update_time](#output_update_time) | The time when the repository was last updated.                                                                          |
-
+| Name | Description |
+|------|-------------|
+| <a name="output_create_time"></a> [create\_time](#output\_create\_time) | The time when the repository was created. |
+| <a name="output_id"></a> [id](#output\_id) | An identifier for the resource with format projects/{{project}}/locations/{{location}}/repositories/{{repository\_id}}. |
+| <a name="output_name"></a> [name](#output\_name) | The name of the repository, for example: "repo1". |
+| <a name="output_update_time"></a> [update\_time](#output\_update\_time) | The time when the repository was last updated. |
 <!-- END_TF_DOCS -->
 
 ## Standard Module Repository Docs
