@@ -3,7 +3,10 @@
 ################################################################################
 terraform {
   required_providers {
-    # add providers here
+    google = {
+      source  = "hashicorp/google"
+      version = "6.1.0"
+    }
   }
   required_version = "~>1.9"
 }
