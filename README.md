@@ -164,6 +164,6 @@ Module version numbers are derived from previous versions and Conventional Commi
 
 ### Auto-Documentation
 
-Module documentation will automatically be completed upon creating a PR. You do not need to fill out the [Module Documentation](#module-documentation) section by hand.
+Module documentation will automatically be completed upon creating a PR. You do not need to fill out the [Module Documentation](#module-documentation) section by hand. trigger
 
 </details>
