@@ -7,6 +7,9 @@ permissions: read-all
 
 jobs:
   google:
+    permissions:
+      contents: "read"
+      id-token: "write"
     runs-on: ubuntu-22.04
     steps:
       - uses: "google-github-actions/auth@v2"
