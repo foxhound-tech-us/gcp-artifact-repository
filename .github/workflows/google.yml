@@ -27,3 +27,5 @@ jobs:
         run: terraform init
       - name: Run Tests
         run: terraform test
+        env:
+          TF_LOG: DEBUG
