@@ -19,3 +19,11 @@ jobs:
           export_environment_variables: true
           service_account: github-runner@hc-e95fbb5cfc36456086463eaf02a.iam.gserviceaccount.com
           workload_identity_provider: projects/896622764/locations/global/workloadIdentityPools/github/providers/github
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@b9cd54a3c349d3f38e8881555d616ced269862dd # v3.1.2
+        with:
+          terraform_version: 1.9.0
+      - name: Initialize
+        run: terraform init
+      - name: Run Tests
+        run: terraform test

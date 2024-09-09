@@ -1,7 +1,7 @@
-mock_provider "google" {}
+provider "google" {}
 
 run "module_test" {
-  # command = apply
+  command = apply
 
   variables {
     project_id    = "test-proj"
