@@ -4,9 +4,8 @@ run "module_test" {
   command = apply
 
   variables {
-    project_id    = "test-proj"
     crypto_key    = "test-key"
-    location      = "test-location"
+    location      = "us-west1"
     repository_id = "my-artifact-repository-${split("-", uuid())[0]}"
   }
 
