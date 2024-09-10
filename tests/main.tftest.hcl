@@ -1,13 +1,20 @@
 provider "google" {}
 
+variables {
+  crypto_key    = "test-key"
+  location      = "us-west1"
+  repository_id = "my-artifact-repository-${split("-", uuid())[0]}"
+}
+
+run "setup" {
+  ## create prerequisite resources
+  module {
+    source = "./setup"
+  }
+}
+
 run "module_test" {
   command = apply
-
-  variables {
-    crypto_key    = "test-key"
-    location      = "us-west1"
-    repository_id = "my-artifact-repository-${split("-", uuid())[0]}"
-  }
 
   assert {
     condition     = output.name == var.repository_id
