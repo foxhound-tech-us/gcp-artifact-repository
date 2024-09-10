@@ -26,3 +26,7 @@ resource "google_kms_crypto_key" "setup" {
   #checkov:skip=CKV_GCP_82:Test keys are allowed to be deleted
   #checkov:skip=CKV_GCP_43:Test keys don't need to be rotated
 }
+
+output "test_key_name" {
+  value = google_kms_crypto_key.setup.name
+}

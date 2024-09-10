@@ -17,6 +17,10 @@ run "setup" {
 run "module_test" {
   command = apply
 
+  variables {
+    crypto_key = run.setup.test_key_name
+  }
+
   assert {
     condition     = output.name == var.repository_id
     error_message = "output.name does not match ${var.repository_id}"
