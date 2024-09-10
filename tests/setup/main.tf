@@ -26,14 +26,3 @@ resource "google_kms_crypto_key" "setup" {
   #checkov:skip=CKV_GCP_82:Test keys are allowed to be deleted
   #checkov:skip=CKV_GCP_43:Test keys don't need to be rotated
 }
-
-data "google_client_openid_userinfo" "provider_identity" {}
-
-resource "google_kms_crypto_key_iam_binding" "crypto_key" {
-  crypto_key_id = google_kms_crypto_key.setup.id
-  role          = "roles/cloudkms.cryptoKeyEncrypter"
-
-  members = [
-    "serviceAccount:${data.google_client_openid_userinfo.provider_identity.email}",
-  ]
-}
