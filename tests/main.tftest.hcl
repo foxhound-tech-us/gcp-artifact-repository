@@ -10,7 +10,7 @@ run "module_test" {
   }
 
   assert {
-    condition     = output.name != null
+    condition     = output.name == var.repository_id
     error_message = "output.name does not match ${var.repository_id}"
   }
 
