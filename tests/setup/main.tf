@@ -6,12 +6,16 @@ variable "crypto_key" {
   type = string
 }
 
+variable "project_id" {
+  type = string
+}
+
 ## key_rings cannot be deleted, so we'll have to use a stationary one named 'tf-integration-test'
 ## this is to prevent creating a new key_ring for each test.
 data "google_kms_key_ring" "setup" {
   name     = "tf-integration-test"
   location = var.location
-  project  = "hc-e95fbb5cfc36456086463eaf02a"
+  project  = var.project_id
 }
 
 ## create a temp key for testing
