@@ -10,10 +10,15 @@ variable "project_id" {
   type = string
 }
 
+variable "key_ring_name" {
+  type        = string
+  description = "(Optional) The name of the key ring to use. If blank, name will be inferred."
+}
+
 ## key_rings cannot be deleted, so we'll have to use a stationary one named 'tf-integration-test'
 ## this is to prevent creating a new key_ring for each test.
 data "google_kms_key_ring" "setup" {
-  name     = "tf-integration-test"
+  name     = var.key_ring_name
   location = var.location
   project  = var.project_id
 }

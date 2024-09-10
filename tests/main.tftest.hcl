@@ -5,6 +5,7 @@ variables {
   location      = "us-west1"
   repository_id = "my-artifact-repository-${split("-", uuid())[0]}"
   project_id    = "hc-e95fbb5cfc36456086463eaf02a" ## test project
+  key_ring_name     = "tf-integration-test"
 }
 
 run "setup" {
@@ -19,6 +20,7 @@ run "module_test" {
 
   variables {
     crypto_key = run.setup.test_key_name
+    key_ring_name = 
   }
 
   assert {
