@@ -31,6 +31,8 @@ jobs:
     name: Terraform Test
     runs-on: ubuntu-22.04
     needs: title
+    permissions:
+      id-token: write
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.7
