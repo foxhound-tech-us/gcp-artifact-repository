@@ -11,6 +11,7 @@ variable "crypto_key" {
 data "google_kms_key_ring" "setup" {
   name     = "tf-integration-test"
   location = var.location
+  project  = "hc-e95fbb5cfc36456086463eaf02a"
 }
 
 ## create a temp key for testing
