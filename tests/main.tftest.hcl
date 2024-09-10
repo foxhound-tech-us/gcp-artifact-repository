@@ -20,7 +20,6 @@ run "module_test" {
 
   variables {
     crypto_key = run.setup.test_key_name
-    key_ring_name = 
   }
 
   assert {
