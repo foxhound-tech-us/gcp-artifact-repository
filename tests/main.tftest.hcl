@@ -9,7 +9,7 @@ variables {
 run "setup" {
   ## create prerequisite resources
   module {
-    source = "tests/setup"
+    source = "./tests/setup"
   }
 }
 
