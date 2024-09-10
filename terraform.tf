@@ -15,4 +15,4 @@ terraform {
 # Provider Configuration
 ################################################################################
 
-# add explicit provider configuration blocks here
+provider "google" {}
