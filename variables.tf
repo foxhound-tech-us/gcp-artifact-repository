@@ -5,12 +5,17 @@
 variable "project_id" {
   type        = string
   description = "(Optional) The ID of the project in which the resource belongs. If it is not provided, the project ID listed in the provider is used."
-  default     = ""
+  default     = null
 }
 
 ################################################################################
 # Encryption Key Configurations
 ################################################################################
+
+variable "key_ring_name" {
+  type        = string
+  description = "(Optional) The name of the key ring to use. If blank, name will be inferred."
+}
 
 variable "crypto_key" {
   type        = string

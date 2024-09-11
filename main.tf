@@ -2,7 +2,7 @@
 # Encryption Key Data Sources
 ################################################################################
 data "google_kms_key_ring" "my_key_ring" {
-  name     = "antm-default-keyring-${var.location}"
+  name     = try(var.key_ring_name, "antm-default-keyring-${var.location}")
   location = var.location
   project  = var.project_id
 }

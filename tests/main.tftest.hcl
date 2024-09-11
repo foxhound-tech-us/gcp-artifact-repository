@@ -1,12 +1,24 @@
 provider "google" {}
 
+variables {
+  crypto_key    = "test-key-${split("-", uuid())[0]}"
+  location      = "us-west1"
+  repository_id = "my-artifact-repository-${split("-", uuid())[0]}"
+  key_ring_name = "tf-integration-test"
+}
+
+run "setup" {
+  ## create prerequisite resources
+  module {
+    source = "./tests/setup"
+  }
+}
+
 run "module_test" {
   command = apply
 
   variables {
-    crypto_key    = "test-key"
-    location      = "us-west1"
-    repository_id = "my-artifact-repository-${split("-", uuid())[0]}"
+    crypto_key = run.setup.test_key_name
   }
 
   assert {
