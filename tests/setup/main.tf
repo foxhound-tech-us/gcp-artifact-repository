@@ -16,7 +16,7 @@ variable "key_ring_name" {
 }
 
 ## key_rings cannot be deleted, so we'll have to use a stationary one named 'tf-integration-test'
-## this is to prevent creating a new key_ring for each test.
+## this is to prevent creating a new key_ring for each test
 data "google_kms_key_ring" "setup" {
   name     = var.key_ring_name
   location = var.location
