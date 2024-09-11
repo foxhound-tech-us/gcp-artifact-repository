@@ -4,7 +4,6 @@ variables {
   crypto_key    = "test-key-${split("-", uuid())[0]}"
   location      = "us-west1"
   repository_id = "my-artifact-repository-${split("-", uuid())[0]}"
-  project_id    = "hc-e95fbb5cfc36456086463eaf02a" ## test project
   key_ring_name     = "tf-integration-test"
 }
 

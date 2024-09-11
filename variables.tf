@@ -5,7 +5,6 @@
 variable "project_id" {
   type        = string
   description = "(Optional) The ID of the project in which the resource belongs. If it is not provided, the project ID listed in the provider is used."
-  default     = ""
 }
 
 ################################################################################
