@@ -44,6 +44,7 @@ jobs:
         run: terraform test
         env:
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
+          GOOGLE_PROJECT: ${{ secrets.GOOGLE_PROJECT }}
   terraform-docs:
     name: Terraform Docs
     runs-on: ubuntu-22.04
