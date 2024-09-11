@@ -11,10 +11,10 @@ terraform {
 provider "google" {}
 
 variables {
-  crypto_key        = "test-key-${split("-", uuid())[0]}"
-  location          = "us-west1"
-  repository_id     = "my-artifact-repository-${split("-", uuid())[0]}"
-  key_ring_name     = "tf-integration-test"
+  crypto_key    = "test-key-${split("-", uuid())[0]}"
+  location      = "us-west1"
+  repository_id = "my-artifact-repository-${split("-", uuid())[0]}"
+  key_ring_name = "tf-integration-test"
 }
 
 run "setup" {
