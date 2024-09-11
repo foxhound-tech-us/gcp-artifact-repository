@@ -18,11 +18,12 @@ data "google_kms_key_ring" "setup" {
   location = var.location
 }
 
-## create a temp key for testing
+## create a temp key for testing. This key will remain for 24h, then it is automatically deleted.
 
 resource "google_kms_crypto_key" "setup" {
-  name     = var.crypto_key
-  key_ring = data.google_kms_key_ring.setup.id
+  name                       = var.crypto_key
+  key_ring                   = data.google_kms_key_ring.setup.id
+  destroy_scheduled_duration = "86400s"
   #checkov:skip=CKV_GCP_82:Test keys are allowed to be deleted
   #checkov:skip=CKV_GCP_43:Test keys don't need to be rotated
 }
