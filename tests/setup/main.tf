@@ -20,7 +20,6 @@ variable "key_ring_name" {
 data "google_kms_key_ring" "setup" {
   name     = var.key_ring_name
   location = var.location
-  project  = var.project_id
 }
 
 ## create a temp key for testing
