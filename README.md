@@ -85,10 +85,11 @@ No modules.
 | <a name="input_description"></a> [description](#input\_description) | (Optional) The user-provided description of the repository. | `string` | `""` | no |
 | <a name="input_docker_config"></a> [docker\_config](#input\_docker\_config) | (Optional) This contains repository level configuration for the repositories of format type of Docker. Allows setting immutable\_tags. | `map(string)` | `{}` | no |
 | <a name="input_format"></a> [format](#input\_format) | (Required) The format of packages that are stored in the repository. Currently, the possible allowed value for the Format of the Artifact Registry Repository is: DOCKER. | `string` | `"DOCKER"` | no |
+| <a name="input_key_ring_name"></a> [key\_ring\_name](#input\_key\_ring\_name) | (Optional) The name of the key ring to use. If blank, name will be inferred. | `string` | n/a | yes |
 | <a name="input_labels"></a> [labels](#input\_labels) | (Required) A set of additional key/value label pairs to assign to the bucket. This is usually inherited from the Mandatory Labels Module via the format: "module.mandatory\_labels.module". | `map(string)` | `{}` | no |
 | <a name="input_location"></a> [location](#input\_location) | (Required) The name of the location this repository is located in. | `string` | n/a | yes |
 | <a name="input_mode"></a> [mode](#input\_mode) | (Optional) The mode configures the repository to serve artifacts from different sources. Default value is STANDARD\_REPOSITORY. Currently, the possible allowed values for the Mode of the Artifact Registry Repository is: STANDARD\_REPOSITORY. | `string` | `"STANDARD_REPOSITORY"` | no |
-| <a name="input_project_id"></a> [project\_id](#input\_project\_id) | (Optional) The ID of the project in which the resource belongs. If it is not provided, the project ID listed in the provider is used. | `string` | `""` | no |
+| <a name="input_project_id"></a> [project\_id](#input\_project\_id) | (Optional) The ID of the project in which the resource belongs. If it is not provided, the project ID listed in the provider is used. | `string` | `null` | no |
 | <a name="input_repository_id"></a> [repository\_id](#input\_repository\_id) | (Required) The last part of the repository name | `string` | n/a | yes |
 | <a name="input_update_timeout"></a> [update\_timeout](#input\_update\_timeout) | (Optional) Update Timeout of Resource | `number` | `20` | no |
 
