@@ -31,7 +31,7 @@ data "google_project" "project" {}
 
 resource "google_kms_crypto_key_iam_binding" "crypto_key" {
   crypto_key_id = google_kms_crypto_key.setup.id
-  role          = "roles/cloudkms.cryptoKeyEncrypter"
+  role          = "roles/cloudkms.cryptoKeyEncrypterDecrypter"
 
   members = [
     "serviceAccount:service-${data.google_project.project.number}@gcp-sa-artifactregistry.iam.gserviceaccount.com",
