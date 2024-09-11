@@ -1,9 +1,19 @@
+terraform {
+  required_providers {
+    google = {
+      source  = "hashicorp/google"
+      version = "6.1.0"
+    }
+  }
+  required_version = "~>1.9"
+}
+
 provider "google" {}
 
 variables {
-  crypto_key    = "test-key-${split("-", uuid())[0]}"
-  location      = "us-west1"
-  repository_id = "my-artifact-repository-${split("-", uuid())[0]}"
+  crypto_key        = "test-key-${split("-", uuid())[0]}"
+  location          = "us-west1"
+  repository_id     = "my-artifact-repository-${split("-", uuid())[0]}"
   key_ring_name     = "tf-integration-test"
 }
 
