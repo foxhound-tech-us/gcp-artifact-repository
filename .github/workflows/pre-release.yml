@@ -43,6 +43,7 @@ jobs:
       - name: Run Tests
         run: terraform test
         env:
+          TF_LOG: DEBUG
           GOOGLE_CREDENTIALS: ${{ secrets.GOOGLE_CREDENTIALS }}
           GOOGLE_PROJECT: ${{ secrets.GOOGLE_PROJECT }}
   terraform-docs:
